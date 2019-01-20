@@ -1,4 +1,23 @@
-<p>
-    <button mat-raised-button color="primary">Add</button>
-    <button mat-raised-button color="primary" [routerLink]="['../']">Back</button>
-</p>
+<mat-card>
+    <mat-card-title>Add Words</mat-card-title>
+</mat-card>
+
+<mat-card>
+    <form class="form" [formGroup]="formAddStreak   ">
+        <mat-form-field class="full-width">
+            <input matInput placeholder="Name (case insensitive)" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" type="number">
+            <input matInput placeholder="Today's words (only numbers)" formControlName="words">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" type="number">
+            <input matInput placeholder="Total streak (only numbers)" formControlName="streak">
+        </mat-form-field>
+    </form>
+    <p>
+        <button mat-raised-button color="primary" (click)="onSubmitClicked()">Submit</button>
+        <button mat-raised-button color="primary" [routerLink]="['../']">Back</button>
+    </p>
+</mat-card>

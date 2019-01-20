@@ -1,5 +1,21 @@
 <p>
-    <button mat-raised-button color="primary" [routerLink]="['../add']">Add</button>
+    <button mat-raised-button color="primary" [routerLink]="['../add']">Add Words</button>
 </p>
 
-<p></p>
+<div *ngIf="isLoading" class="spinner">
+    <mat-spinner diameter="50"></mat-spinner>
+</div>
+
+<div *ngIf="!isLoading">
+    <mat-card>
+        <mat-card-title>Weekly Standings</mat-card-title>
+    </mat-card>
+    <mat-card *ngFor="let streak of streaks; index as i;">
+        <mat-card-title>{{i + 1}}: {{streak._id}}</mat-card-title>
+        <mat-card-subtitle>{{streak.words}} words on this week</mat-card-subtitle>
+        <mat-card-content>
+            <p>Last update: {{streak.lastWords}} words on {{streak.formattedDate}}</p>
+            <p>Current/best day streak: {{streak.bestStreak}}/{{streak.bestStreak}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

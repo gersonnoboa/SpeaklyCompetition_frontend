@@ -7,6 +7,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from './material/material.module';
 import { StreaksComponent } from './streaks/streaks.component';
 import { AddStreakComponent } from './add-streak/add-streak.component';
+import { StreaksService } from './streaks/streaks.service';
+import { HttpClientModule } from '@angular/common/http'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +23,18 @@ import { AddStreakComponent } from './add-streak/add-streak.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [
+      StreaksService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
