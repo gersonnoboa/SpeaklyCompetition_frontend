@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StreaksService } from "./streaks.service";
+import { AddStreakService } from './add-streak.service';
 
-describe('StreaksService', () => {
+describe('AddStreakService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: StreaksService = TestBed.get(StreaksService);
+    const service: AddStreakService = TestBed.get(AddStreakService);
     expect(service).toBeTruthy();
   });
 });

@@ -9,7 +9,6 @@ export class StreaksService {
     constructor(private http: HttpClient) { }
 
     requestStreaks() {
-        console.log("requesting streaks");
         return this.http.get(environment.url + "/api/streaks/week");
     }
 }

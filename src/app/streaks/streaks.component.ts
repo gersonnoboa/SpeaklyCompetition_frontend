@@ -14,7 +14,6 @@ export class StreaksComponent implements OnInit {
     constructor(private service: StreaksService) { }
 
     ngOnInit() {
-        console.log("initing");
         this.getStreaks();
     }
 
