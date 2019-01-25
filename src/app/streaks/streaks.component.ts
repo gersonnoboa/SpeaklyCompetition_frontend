@@ -8,8 +8,8 @@ import * as moment from 'moment';
     styleUrls: ['./streaks.component.scss']
 })
 export class StreaksComponent implements OnInit {
-    private isLoading = false;
-    private streaks: any;
+    isLoading = false;
+    streaks: any;
 
     constructor(private service: StreaksService) { }
 
