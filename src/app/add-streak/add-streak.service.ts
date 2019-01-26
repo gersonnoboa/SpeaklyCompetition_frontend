@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
+import { Observable, pipe } from 'rxjs';
+import { catchError, map } from 'rxjs/operators'; 
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,11 @@ export class AddStreakService {
     return this.http.post(environment.url + "/api/streaks", {
         name: name,
         words: words,
-        streakDays: streakDays
+        streakDays: streakDays,
+        date: new Date()
     })
+    .pipe(
+        catchError((error: HttpErrorResponse) => { return Observable.throw(error); })
+    );
   }
 }

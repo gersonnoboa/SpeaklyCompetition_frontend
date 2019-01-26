@@ -11,7 +11,7 @@ import { StreaksService } from './streaks/streaks.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgFlashMessagesModule } from 'ng-flash-messages';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgFlashMessagesModule.forRoot()
   ],
   exports: [
     FormsModule,
