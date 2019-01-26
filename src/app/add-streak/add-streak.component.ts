@@ -27,7 +27,6 @@ export class AddStreakComponent implements OnInit {
         const streakDays = this.formAddStreak.controls["streakDays"].value;
 
         this.service.postStreaks(name, words, streakDays).subscribe(event => {
-            console.log("success");
             this.router.navigateByUrl('/streaks');
         }, error => {
             console.error(error);
