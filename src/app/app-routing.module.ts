@@ -9,13 +9,8 @@ const routes: Routes = [
         component: AddStreakComponent
     },
     {
-        path: "streaks",
-        component: StreaksComponent
-    },
-    {
         path: "",
-        redirectTo: "/streaks",
-        pathMatch: "full"
+        component: StreaksComponent
     }
 ];
 
