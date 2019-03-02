@@ -14,7 +14,9 @@ export class StreaksService {
         return this.http
         .get(environment.url + "/api/streaks/week")
         .pipe(
-            catchError((error: HttpErrorResponse) => { return Observable.throw(error); })
+            catchError((error: HttpErrorResponse) => { 
+                console.error(error); 
+                return Observable.throw(error); })
         );
     }
 }

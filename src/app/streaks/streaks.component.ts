@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StreaksService } from './streaks.service';
 import * as moment from 'moment';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-streaks',
@@ -23,9 +24,12 @@ export class StreaksComponent implements OnInit {
         this.service.requestStreaks().subscribe(event => {
             this.configureData(event as Array<any>);
         },
-        error => {
+        (error: HttpErrorResponse) => {
             this.showSnackBar("An error occurred. Please try again later.");
-            console.error(error);
+            console.error(error.message);
+            console.log(error.statusText);
+            console.log(error.error);
+            console.log(error.name);
         });
     }
 

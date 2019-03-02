@@ -32,7 +32,7 @@ export class AddStreakComponent implements OnInit {
 
         this.service.postStreaks(name, words, streakDays).subscribe(event => {
             this.showSnackBar("Words added successfully");
-            this.router.navigateByUrl("/streaks");
+            this.router.navigateByUrl("/");
         }, error => {
             this.showSnackBar("An error occurred. Make sure that you are typing numbers only on the words and streak fields.");
         });
